@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>JsonUtils Tool</title>
 </head>
+
 <style>
     body {
         font-family: Arial, sans-serif;
@@ -30,16 +31,27 @@
         background-color: #0056b3;
     }
 </style>
+
 <body>
-<div class="container">
-    <h1 class="greeting" th:text="${message}"></h1>
-    <button class="button" onclick="sayHello()">Click here to use JsonUtils Tool</button>
-</div>
+
+<h1>JsonUtils Tool - Shorten JSON by whitelist & blacklist JsonPath</h1>
+
+<form action="/action_get_data">
+    <label for="whitelist">Whitelist:</label>
+    <input type="text" id="whitelist" name="whitelist"><br><br>
+    <label for="blacklist">Blacklist:</label>
+    <input type="text" id="blacklist" name="blacklist"><br><br>
+    <label for="json">JSON:</label>
+    <input type="text" id="json" name="json"><br><br>
+    <button class="button" onclick="sayHello()">SHORTEN JSON</button>
+</form>
 
 <script>
     function sayHello() {
         alert("Hello! This is JsonUtils Tool made by King Bean. The service is maintaining...");
     }
 </script>
+
 </body>
+
 </html>
