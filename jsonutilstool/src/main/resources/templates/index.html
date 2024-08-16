@@ -62,7 +62,7 @@
                 url: "https://kingbeantool-production.up.railway.app/jsonUtils/shortenJson",
                 type: 'POST',
                 contentType: 'application/json',
-                data: bodyCallPost,
+                data: JSON.stringify(bodyCallPost),
                 success: function (data, status) {
                     console.log("Data: " + data + "\nStatus: " + status);
                     alert("Data: " + data + "\nStatus: " + status);
