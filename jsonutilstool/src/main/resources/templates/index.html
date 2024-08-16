@@ -50,13 +50,10 @@
 <script>
     $(document).ready(function () {
         $(document.getElementById("execute-shorten")).click(function () {
-            const whitelistJsonArray = JSON.parse(JSON.stringify(document.getElementById("whitelist").value));
-            const blacklistJsonArray = JSON.parse(JSON.stringify(document.getElementById("blacklist").value));
-            const jsonNeedToShorten = JSON.parse(JSON.stringify(document.getElementById("json").value));
+            const whitelistJsonArray = JSON.parse(document.getElementById("whitelist").value);
+            const blacklistJsonArray = JSON.parse(document.getElementById("blacklist").value);
+            const jsonNeedToShorten = JSON.parse(document.getElementById("json").value);
             const bodyCallPost = {};
-            const whiteList = [];
-            const blackList = [];
-            const jsonObject = {};
             bodyCallPost.whiteList = whitelistJsonArray;
             bodyCallPost.blackList = blacklistJsonArray;
             bodyCallPost.jsonObject = jsonNeedToShorten;
@@ -65,7 +62,7 @@
                 url: "https://kingbeantool-production.up.railway.app/jsonUtils/shortenJson",
                 type: 'POST',
                 contentType: 'application/json',
-                data: JSON.stringify(bodyCallPost),
+                data: bodyCallPost,
                 success: function (data, status) {
                     alert("Data: " + data + "\nStatus: " + status);
                 },
