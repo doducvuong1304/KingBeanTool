@@ -72,7 +72,7 @@
                     alert("Data: " + data + "\nStatus: " + status);
                     const resultElement = document.getElementById("json-shortened");
                     resultElement.value(data);
-                    document.getElementById("json-shortened").style.visibility = "visible";
+                    resultElement.style.visibility = "visible";
                 },
                 error: function (error) {
                     console.error("Error:", error);
