@@ -64,6 +64,7 @@
                 contentType: 'application/json',
                 data: bodyCallPost,
                 success: function (data, status) {
+                    console.log("Data: " + data + "\nStatus: " + status);
                     alert("Data: " + data + "\nStatus: " + status);
                 },
                 error: function (error) {
