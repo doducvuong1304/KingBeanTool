@@ -40,6 +40,10 @@
                 <center>
                     <button class="btn btn-secondary btn-lg" id="execute-shorten" type="button">SHORTEN JSON</button>
                 </center>
+                <div class="form-group" style="visibility:hidden;">
+                    <label for="json-shortened">JSON shortened:</label>
+                    <textarea class="form-control" id="json-shortened"></textarea>
+                </div>
             </form>
         </div>
         <div class="col-sm"></div>
@@ -66,6 +70,9 @@
                 success: function (data, status) {
                     console.log("Data: " + data + "\nStatus: " + status);
                     alert("Data: " + data + "\nStatus: " + status);
+                    const resultElement = document.getElementById("json-shortened");
+                    resultElement.value(data);
+                    document.getElementById("json-shortened").style.visibility = "visible";
                 },
                 error: function (error) {
                     console.error("Error:", error);
