@@ -61,17 +61,18 @@
             bodyCallPost.whiteList = whitelistJsonArray;
             bodyCallPost.blackList = blacklistJsonArray;
             bodyCallPost.jsonObject = jsonNeedToShorten;
-            console.log("Data to be sent:", bodyCallPost);
+            const rawRequest = JSON.stringify(bodyCallPost);
+            console.log("bodyString to be sent:", rawRequest);
             $.post({
                 url: "https://kingbeantool-production.up.railway.app/jsonUtils/shortenJson",
                 type: 'POST',
                 contentType: 'application/json',
-                data: JSON.stringify(bodyCallPost),
-                success: function (data, status) {
-                    console.log("Data: " + data + "\nStatus: " + status);
-                    alert("Data: " + data + "\nStatus: " + status);
+                data: rawRequest,
+                success: function (response, status) {
+                    const rawResponse = JSON.stringify(response);
+                    console.log("rawResponse: " + rawResponse + "\nstatus: " + status);
                     const resultElement = document.getElementById("json-shortened");
-                    resultElement.value = data;
+                    resultElement.value = rawResponse;
                     resultElement.style.visibility = "visible";
                 },
                 error: function (error) {
