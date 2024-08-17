@@ -54,25 +54,18 @@
 <script>
     $(document).ready(function () {
         $(document.getElementById("execute-shorten")).click(function () {
-            const whitelistJsonArray = JSON.parse(document.getElementById("whitelist").value);
-            const blacklistJsonArray = JSON.parse(document.getElementById("blacklist").value);
-            const jsonNeedToShorten = JSON.parse(document.getElementById("json").value);
             const bodyCallPost = {};
-            bodyCallPost.whiteList = whitelistJsonArray;
-            bodyCallPost.blackList = blacklistJsonArray;
-            bodyCallPost.jsonObject = jsonNeedToShorten;
-            const rawRequest = JSON.stringify(bodyCallPost);
-            console.log("bodyString to be sent:", rawRequest);
+            bodyCallPost.whiteList = JSON.parse(document.getElementById("whitelist").value);
+            bodyCallPost.blackList = JSON.parse(document.getElementById("blacklist").value);
+            bodyCallPost.jsonObject = JSON.parse(document.getElementById("json").value);
             $.post({
-                url: "https://kingbeantool-production.up.railway.app/jsonUtils/shortenJson",
+                url: window.location.href,
                 type: 'POST',
                 contentType: 'application/json',
-                data: rawRequest,
+                data: JSON.stringify(bodyCallPost),
                 success: function (response, status) {
-                    const rawResponse = JSON.stringify(response);
-                    console.log("rawResponse: " + rawResponse + "\nstatus: " + status);
                     const resultElement = document.getElementById("json-shortened");
-                    resultElement.value = rawResponse;
+                    resultElement.value = JSON.stringify(response);
                     resultElement.style.visibility = "visible";
                 },
                 error: function (error) {

@@ -20,7 +20,7 @@ public class JsonUtilsController {
         return ResponseEntity.ok(jsonUtilsService.handleShortenJsonRequest(shortenJsonRequest));
     }
 
-    @GetMapping("/view")
+    @GetMapping("/shortenJson")
     public ModelAndView showView(ModelAndView modelAndView) {
         modelAndView.setViewName("index");
         return modelAndView;
