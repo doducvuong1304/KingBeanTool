@@ -14,7 +14,8 @@
     <title>JsonUtils Tool</title>
     <center>
         <img alt="..." class="img-thumbnail"
-             src="https://blog.kakaocdn.net/dn/ddQ3Pe/btqE5PZGzxo/Hkk79TWjvvRKiRWsP2Sga0/img.png">
+             src="https://blog.kakaocdn.net/dn/ddQ3Pe/btqE5PZGzxo/Hkk79TWjvvRKiRWsP2Sga0/img.png"
+             style="width: 20%;">
         <h1>JsonUtils Tool</h1>
         <h2>Shorten JSON by whitelist & blacklist JsonPath</h2>
     </center>
@@ -28,10 +29,12 @@
                 <div class="form-group">
                     <label for="whitelist">Whitelist:</label>
                     <input class="form-control" id="whitelist" placeholder="Fill whitelist JsonPath" type="text">
+                    <p>Example: ["$.id","$.type","$.name","$.topping"]</p>
                 </div>
                 <div class="form-group">
                     <label for="blacklist">Blacklist:</label>
                     <input class="form-control" id="blacklist" placeholder="Fill blacklist JsonPath" type="text">
+                    <p>Example: ["$.batters","$.topping[0]"]</p>
                 </div>
                 <div class="form-group">
                     <label for="json">JSON:</label>
