@@ -65,7 +65,7 @@
                 data: JSON.stringify(bodyCallPost),
                 success: function (response, status) {
                     const resultElement = document.getElementById("json-shortened");
-                    resultElement.value = JSON.stringify(response);
+                    resultElement.value = JSON.stringify(response.jsonObjectShortened);
                     resultElement.style.visibility = "visible";
                 },
                 error: function (error) {
